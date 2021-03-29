@@ -8,11 +8,6 @@ app = FastAPI()
 app.include_router(book_router.router)
 
 
-@app.get("/")
-async def hello_world():
-    return "hello_world"
-
-
 @app.on_event("startup")
 async def startup():
     # create db tables
